@@ -1,12 +1,19 @@
-import { useState } from 'react'
+import useAuth from './store/context'
 import './App.css'
 
 function App() {
 
+  const { name, setName} = useAuth();
+
+  console.log(name);
 
   return (
     <>
-      routing
+      <input type='text' 
+      // readOnly
+      value={name} 
+      onChange={e => setName(e.target.value)}
+      ></input>
     </>
   )
 }
